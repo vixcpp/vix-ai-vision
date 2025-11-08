@@ -6,10 +6,17 @@
 namespace vix::ai::vision
 {
 
+    // Bounding box: {x, y, w, h}
+    using BBox = std::array<int, 4>;
+
     struct Detector
     {
-        // renvoie N boxes factices: {x,y,w,h}
-        std::vector<std::array<int, 4>> detect(const Image &) const { return {}; }
+        // v0 stub: returns empty vec, but checks image validity
+        std::vector<BBox> detect(const Image &img) const
+        {
+            img.assert_not_empty("Detector::detect");
+            return {};
+        }
     };
 
 } // namespace vix::ai::vision
