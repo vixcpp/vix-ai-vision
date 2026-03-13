@@ -11,7 +11,7 @@ option(VIX_AI_VISION_WARNINGS    "Enable extra warnings" ON)
 
 # ---- Library target ---------------------------------------------------------
 add_library(vix_ai_vision INTERFACE)
-add_library(Vix::AI::vision ALIAS vix_ai_vision)
+add_library(vix::ai::vision ALIAS vix_ai_vision)
 
 target_include_directories(vix_ai_vision INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -54,7 +54,7 @@ if(VIX_AI_VISION_INSTALL)
 
   install(EXPORT vix_ai_visionTargets
           FILE vix_ai_visionTargets.cmake
-          NAMESPACE Vix::AI::
+          NAMESPACE vix::ai::
           DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/vix_ai/vision)
 
   write_basic_package_version_file(
